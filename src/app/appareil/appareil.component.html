@@ -1,0 +1,9 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': appareilStatus === 'allumé',
+                'list-group-item-danger': appareilStatus === 'éteint'}">
+    <div style="width:20px;height:20px;background-color:red;" *ngIf="appareilStatus === 'éteint'"></div>
+    <h4 [ngStyle]="{color: getColor()}">Appareil : {{ appareilName }} -- Statut : {{ getStatus() }}</h4>
+    <input type="text" class="form-control" [(ngModel)]="appareilName">
+</li>
